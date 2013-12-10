@@ -1291,6 +1291,9 @@ void WorldSession::HandleItemRefund(WorldPacket &recvData)
         return;
     }
 
+   if (_player->GetLootGUID() == guid)
+       return;
+
     GetPlayer()->RefundItem(item);
 }
 
